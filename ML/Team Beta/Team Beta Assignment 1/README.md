@@ -1,4 +1,4 @@
-Team Members:
-Naina Bhalla
-Shikhar Gupta
-Arnab Datta
+**Team Members:**
+<br>Naina Bhalla
+<br>Shikhar Gupta
+<br>Arnab Datta
