@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 function Todo() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
@@ -31,25 +30,22 @@ function Todo() {
     })
       .then((res) => res.json())
       .then(() => {
-        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id)); // Remove task with matching ID
+        setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
       })
-
   }
-
   return (
     <div>
       <h1>To Do List</h1>
-      <ul>
+      <ol type="1">
         {tasks.map((task) => (
           <li key={task.id}>
-            {task.todo}{<input type="checkbox" id="complete"></input>} {<button onClick={() => delet(task.id)}>Delete</button>}
+            {task.todo}{<input type="checkbox" id="complete"></input>} {<button class="button1" onClick={() => delet(task.id)}>Delete</button>}
           </li>
         ))}
-      </ul>
-
+      </ol>
       <input
-        type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Write task to add"/>
-      <button onClick={add}>Add Task</button>
+        type="text" class="input" value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Write task to add"/>
+      <button onClick={add} class="button2">Add Task</button>
     </div>
   );
 }
