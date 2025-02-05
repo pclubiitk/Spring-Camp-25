@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 
-int main()
+int32_t main()
 {
     int n,x;
     cin>>n>>x;
@@ -10,28 +11,32 @@ int main()
     {
         cin>>a[i];
     }
-    int count=0;
-    long long int current_sum=0;
-    int i=-1,j=-1;
-    while(j<n)
+    int prefix[n];  
+    for(int i=0;i<n;i++)
     {
-        if(current_sum==x)
+        if(i==0)
         {
-            count++;
-            j++;
-            current_sum+=a[j];
-        }
-        else if(current_sum<x)
-        {
-            j++;
-            current_sum+=a[j];
+            prefix[i]=a[i];
         }
         else
         {
-            i++;
-            current_sum-=a[i];
+            prefix[i]=(prefix[i-1]+a[i]);
         }
-        // cout<<i<<" "<<j<<endl;
+    }
+    int count=0;
+    map<int,int> m;
+    for(int i=0;i<n;i++)
+    {
+        m[prefix[i]]++;
+        if(m.find(prefix[i]-x)!=m.end())
+        {
+            count+=m[prefix[i]-x];
+        }
+    }
+    count+=m[x];
+    if(x==0)
+    {
+        count-=n;
     }
     cout<<count<<endl;
 }

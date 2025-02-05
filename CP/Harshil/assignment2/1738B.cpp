@@ -31,7 +31,7 @@ int main()
         // {
         //     cout<<arr[i]<<" ";
         // }
-        if((n-k)!=0&&(ceil((float)temp/(n-k))>arr[0]))
+        if((n-k)!=0&&(n-k+1)>arr[0])
         {
             cout<<"no"<<endl;
             continue;

@@ -12,7 +12,6 @@ int main()
         cin>>arr[i];
         sum+=arr[i];
     }
-
     long long int l=*max_element(arr, arr + n),r=sum;
     while(l<r)
     {

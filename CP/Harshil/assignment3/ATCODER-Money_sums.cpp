@@ -1,29 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-int main(){
-    int n, w;
-    cin >> n >> w;
-    vector<int> wt(n), val(n);
-    for (int i = 0; i < n; i++)
+
+void rec(int current, const vector<int>& arr, int idx, vector<bool>& reachable)
+{
+    reachable[current] = true;
+    for (int i = idx; i < arr.size(); i++) 
     {
-        cin >> wt[i] >> val[i];
-    }
-    vector<vector<long long>> dp(n+1, vector<long long>(w+1, 0));
- 
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 0; j <= w; j++)
+        int next = current + arr[i];
+        if (next < reachable.size() && !reachable[next]) 
         {
-            if(j >= wt[i-1])
-            {
-                dp[i][j] = max(val[i-1] + dp[i-1][j - wt[i-1]], dp[i-1][j]);
-            } else 
-            {
-                dp[i][j] = dp[i-1][j];
-            }
+            rec(next, arr, i + 1, reachable);
         }
     }
-    cout << dp[n][w] << endl;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    int total = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        total += arr[i];
+    }
+    vector<bool> reachable(total + 1, false);
+    rec(0, arr, 0, reachable);
+    int count=0;
+    for(int i=1;i<=total;i++)
+    {
+        if(reachable[i])
+        {
+            count++;
+        }
+    }
+    cout<<count<<endl;
+    for (int s = 0; s <= total; s++)
+    {
+        if (reachable[s]&&s!=0)
+            cout << s << " ";
+    }
+    cout << endl;
     return 0;
 }
