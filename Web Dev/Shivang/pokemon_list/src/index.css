@@ -1,0 +1,24 @@
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pokemonContainer{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  gap: 5px;
+}
+.Card{
+  padding: 1rem;
+  border: 2px solid red;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s;
+}
+.Card:hover{
+  transform: scale(1.1);
+  background-color: aqua;
+}
