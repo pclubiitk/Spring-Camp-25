@@ -1,0 +1,10 @@
+
+.list_name{
+  text-align: center;
+  border: 3px solid grey;
+  padding: 20px;
+  margin: 10px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 300px;
+  margin:auto;
+}
