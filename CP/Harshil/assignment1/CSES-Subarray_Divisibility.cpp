@@ -29,14 +29,14 @@ int main()
     {
         m[prefix[i]]++;
     }
-    int count=0;
+    long long int count=0;
     for(auto i:m)
     {
-        // if(i.first==0)
-        // {
-        //     count+=i.second;
-        // }
-        count+=((i.second)*(i.second-1))/2;
+        if(i.first==0)
+        {
+            count+=i.second;
+        }
+        count+=((long long int)(i.second)*(i.second-1))/2;
     }
     cout<<count<<endl;
 }
