@@ -1,87 +1,69 @@
+
 #include <bits/stdc++.h>
 #define ll long long
-#define vpll vector<pair<ll,ll>>
-#define vll vector<ll>
-#define vdll vector<vector<ll>>
 using namespace std;
-#define FAST ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define f first
 #define s second
 #define all(v) v.begin(),v.end()
-#define rall(v) v.rbegin(),v.rend()
 ll n, m;
-vdll vis(1002, vll(1002, 0));
-vpll p = { {1,0},{-1,0},{0,1},{0,-1} };
-vector<string> grid(1002);
+vector<string> grid;
+vector<vector<ll>> dist, parent;
+vector<pair<ll, ll>> p = { {1,0}, {-1,0}, {0,1}, {0,-1} };
+char dir[] = {'D', 'U', 'R', 'L'};
 pair<ll, ll> st, ed;
-queue<pair<ll, ll>> q;
-map<pair<ll, ll>, ll> mp;
-map<pair<ll, ll>, pair<ll, ll>> parent;
-
-void bfs(ll x, ll y)
-{
-    vis[x][y] = 0;
+ 
+void bfs(ll x, ll y) {
+    queue<pair<ll, ll>> q;
     q.push({x, y});
-    mp[{x, y}] = 0; 
-
-    while (!q.empty())
-    {
-        pair<ll, ll> temp = q.front();
-        q.pop();
-
-        for (auto z : p)
-        {
-            ll xd = temp.f + z.f;
-            ll yd = temp.s + z.s;
-            if (xd < 0 || yd < 0 || xd >= n || yd >= m) continue;
-            if (grid[xd][yd] == '#') continue;
-            if (mp.find({xd, yd}) == mp.end())
-            {                
-                mp[{xd, yd}] = mp[{temp.f, temp.s}] + 1;
-                parent[{xd, yd}] = {temp.f, temp.s};
-                q.push({xd, yd});
-            }
+    dist[x][y] = 0;
+ 
+    while (!q.empty()) {
+        auto temp = q.front(); q.pop();
+        for (ll i = 0; i < 4; i++) {
+            ll xd = temp.f + p[i].f, yd = temp.s + p[i].s;
+            if (xd < 0 || yd < 0 || xd >= n || yd >= m || grid[xd][yd] == '#' || dist[xd][yd] != -1) continue;
+            dist[xd][yd] = dist[temp.f][temp.s] + 1;
+            parent[xd][yd] = i; 
+            q.push({xd, yd});
         }
     }
 }
-
-int main()
-{
+ 
+int main() {
+    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     cin >> n >> m;
-    for (int i = 0; i < n; i++) cin >> grid[i];
-
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
+    grid.resize(n);
+    dist.assign(n, vector<ll>(m, -1));
+    parent.assign(n, vector<ll>(m, -1));
+ 
+    for (ll i = 0; i < n; i++) {
+        cin >> grid[i];
+        for (ll j = 0; j < m; j++) {
             if (grid[i][j] == 'A') st = {i, j};
             if (grid[i][j] == 'B') ed = {i, j};
         }
     }
-
+ 
     bfs(st.f, st.s);
-
-    if (mp.find(ed) == mp.end()) {
-        cout << "NO";
+ 
+    if (dist[ed.f][ed.s] == -1) {
+        cout << "NO"<<endl;
         return 0;
     }
-
-    cout << "YES\n";
-    cout << mp[ed] << "\n";
-
+ 
+    cout << "YES\n" << dist[ed.f][ed.s] << endl;
+ 
     string res = "";
     pair<ll, ll> temp = ed;
-    ll th=mp[ed];
-    while (th--)
-    {
-        pair<ll, ll> pa = parent[temp];
-        if (pa.f - temp.f == 1) res += 'U';
-        if (pa.f - temp.f == -1) res += 'D';
-        if (pa.s - temp.s == 1) res += 'L';
-        if (pa.s - temp.s == -1) res += 'R';
-        temp = pa;
+    ll th=dist[ed.f][ed.s];
+    while (th--) {
+        ll d = parent[temp.f][temp.s];
+        res += dir[d];
+        temp = {temp.f - p[d].f, temp.s - p[d].s};
     }
-
+ 
     reverse(all(res));
     cout << res << endl;
 }
+
+
