@@ -1,0 +1,45 @@
+CTF Challenge Write-up: Shark1
+1. Challenge Information
+CTF Name: picoCTF
+Challenge Name: Shark1
+Category: Forensics
+Difficulty: Easy
+Challenge Description: Given a network capture file (shark1.pcapng), extract the hidden flag.
+2. Initial Analysis
+Provided File: shark1.pcapng (PCAP capture file)
+Tool Used: Wireshark
+First Thoughts: Since this is a forensic challenge involving a PCAP file, potential approaches include analyzing HTTP traffic, exporting objects, and checking for hidden messages in network packets.
+3. Exploitation Approach
+Step 1: Opening the PCAP File in Wireshark
+Loaded shark1.pcapng in Wireshark.
+Checked for HTTP traffic since it often contains useful information.
+Step 2: Exporting HTTP Objects
+Navigated to File → Export Objects → HTTP in Wireshark.
+A list of objects was displayed.
+Step 3: Filtering for Text-Based Files
+Filtered by MIME type: text/html to find human-readable content.
+Found an interesting file with the name '/'.
+Step 4: Inspecting the Exported File
+Opened the file '/' and found the following text:
+
+Gur synt vf cvpbPGS{c33xno00_1_f33_h_qrnqorrs}
+
+Looked suspiciously encoded.
+Step 5: Decoding the Text
+Recognized the text as ROT13 encoding due to its structure and common CTF tricks.
+Used an online ROT13 decoder or Python to decode:
+
+The flag is picoCTF{p33kab00_1_s33_u_deadbeef}
+
+4. Getting the Flag
+Decoded Flag: picoCTF{p33kab00_1_s33_u_deadbeef}
+5. Lessons Learned & Takeaways
+Key Takeaways:
+PCAP files often contain HTTP objects that can be exported in Wireshark.
+Checking text-based files is a good strategy in forensic challenges.
+ROT13 is a common encoding method in CTFs and should be checked when encountering scrambled text.
+
+
+
+
+
