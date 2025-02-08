@@ -229,8 +229,8 @@ func main() {
 
 		case "3":
 			if currentVault == nil {
-				fmt.Println("Error: Not signed in to any vault")
-				break
+				fmt.Println("Error: Not signed in to any vault");
+				break;
 			}
 
 			fmt.Print("Enter record name: ")
