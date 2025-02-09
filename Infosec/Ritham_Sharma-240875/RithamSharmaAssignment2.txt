@@ -1,0 +1,8 @@
+Qns 1- picoCTF{p33kab00_1_s33_u_deadbeef}-shark1.pcapng
+Solution : Exported Object as https on wireshark and got txt file in which the flag was written using Caesar cipher
+Qns 2- picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}-tftp
+Solution : Exported Object as tftp on wireshark and got 3 pictures and file.txt which had a password DUEDILEGENCE used steghide on images 1 by 1
+Qns 3- picoCTF{dns_3xf1l_ftw_deadbeef}-shark2.pcapng
+Solution : Used Dns Filtering on wireshark and text starting which if joined and converted from Base64 to txt file
+Qns 4- picoCTF{p4ck37_5h4rk_b9d53765}-Packets Primer
+Solution : The pcapng contained tcp files and arp files followed the tcp stream of the first tcp file and got the flag written there
