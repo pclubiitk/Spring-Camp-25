@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
@@ -6,26 +5,25 @@ typedef long long int ll;
 #define pr pair<ll,ll>;
 #define vii vector<pair<ll,ll>;
 ll mod=1e9+7;
-void f(queue<pair<ll,ll>> q){
+void f(queue<ll> q){
     while(!q.empty()){
-        cout<<q.front().first<<" ";
+        cout<<q.front()<<" ";
         q.pop();
     }
-    cout<< " ll\n";
+    cout<< " hhh\n";
     return;
-}
-ll rec(ll x,ll y){
-    if(x>=y){return x-y;}
-    if(y%2==0){return 1+rec(x,y/2);}
-    return 2+rec(x,(y+1)/2);
 }
 void solve() {
     ll n,m;
     cin>>n>>m;
-    ll start=n;
-    ll ans=rec(n,m);
-    cout<<ans<<endl;
-    return;
+    vector<vector<ll>> adj(n+1);
+    for(int i=0;i<m;i++){
+        ll u,v;
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    stack<ll> q;
 }
 int main(){
     ll t;
