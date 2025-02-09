@@ -1,0 +1,59 @@
+.box{
+  width: 40vw;
+  height: 90vh;
+  border-radius: 10px;
+  background-color: rgb(231, 178, 196);
+  
+ 
+}
+.cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#heading{
+  margin-left: 40px;
+}
+.box1{
+  text-align: center;
+}
+.input1{
+  width: 480px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+.input{
+  display: flex;
+  justify-content:space-around;
+
+}
+.btn1{
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: blueviolet;
+}
+.hr{
+  width: 500px;
+  margin-top: 20px;
+  
+}
+.main{
+  margin-left: 40px;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.delete{
+  height: 24px;
+  width: 24px;
+  background-image: url("icons8-delete-24.png");
+  background-repeat: no-repeat;
+  border: none;
+  background-color: rgb(231, 178, 196);
+  margin-right: 20px;
+}
