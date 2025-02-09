@@ -11,30 +11,25 @@ typedef long double ld;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
 typedef vector<string> vs;
- 
+#define MOD 1000000007
+
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);    
+    ios::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
     cint(n);
     vi a(n);
     rep(i, 0, n) {
         cin >> a[i];
     }
-    sort(a.begin(), a.end());
-    int median1 = a[n/2];
-    int median2 = a[n/2 - 1];
-    ll sum1 = 0, sum2 = 0;
-    if (n % 2 == 0) {
-        rep(i, 0, n) {
-            sum1 += abs(median1 - a[i]);
-            sum2 += abs(median2 - a[i]);
+    vi dp(n, INT_MAX);
+    dp[0] = 0;
+    rep(i, 0, n) {
+        for (int j = i+1; j <= i+2; j++) {
+            if (j < n) {
+                dp[j] = min(dp[j], dp[i] + abs(a[i]-a[j]));
+            }
         }
-        cout << min(sum1, sum2);
     }
-    else {
-        rep(i, 0, n) {
-            sum1 += abs(median1 - a[i]);
-        }
-        cout << sum1 << endl;
-    }
+    cout << dp[n-1];
+
 }
