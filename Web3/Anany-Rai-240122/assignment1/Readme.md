@@ -1,5 +1,5 @@
 
-# SHA-256 Prefix Collision Finder
+# SPING CAMP WEB3 ASSIGNMEMT1
 
 This program finds two distinct strings, S1 and S2, that start with given prefixes P1 and P2, respectively, and have SHA-256 hashes sharing the same first k hexadecimal characters.
 
