@@ -1,77 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int row_move[4] = {-1, 0, 1, 0};
-int col_move[4] = {0, 1, 0, -1};
+
 char dir[4] = {'U', 'R', 'D', 'L'};
 
-void bfs(vector<vector<int>> &grid, vector<vector<int>> &distance_map,vector<vector<int>>,int n,int m)
+int bfs(const vector<vector<int>> &grid,vector<vector<int>>&visited,int n,int m, pair<int,int> start)
 {
-    pair<int, int> start = {0, 0};
     queue<pair<int, int>> q;
     q.push(start);
-    grid[start.first][start.second] = 0;
-    distance_map[start.first][start.second] = 0;
+    visited[start.first][start.second] = 1;
+
     while (!q.empty())
     {
         pair<int, int> current = q.front();
         q.pop();
-        if (current == end)
-        {
-            cout << "YES\n";
-            cout << distance_map[end.first][end.second] << endl;
-        
-            vector<char> path;
-            pair<int, int> temp = end;
-            while (temp != start)
-            {
-                pair<int, int> prev = parent[temp.first][temp.second];
-                for (int i = 0; i < 4; i++)
-                {
-                    if (prev.first + row_move[i] == temp.first && prev.second + col_move[i] == temp.second)
-                    {
-                        path.push_back(dir[i]);
-                        break;
-                    }
-                }
-                temp = prev;
-            }
-            reverse(path.begin(), path.end());
-            for (char c : path)
-                cout << c;
-            return;
-        }
-
+        int row_move[4] = {-1, 0, 1, 0};
+        int col_move[4] = {0, 1, 0, -1};
         for (int i = 0; i < 4; i++)
         {
             int new_row = current.first + row_move[i];
             int new_col = current.second + col_move[i];
-
-            if (new_row >= 0 && new_row < n && new_col >= 0 && new_col < m && grid[new_row][new_col] == 1)
+            if (new_row >= 0 && new_row < n && new_col >= 0 && new_col < m && visited[new_row][new_col] == 0 && grid[new_row][new_col] == 1)
             {
+                visited[new_row][new_col] = 1;
                 q.push({new_row, new_col});
-                grid[new_row][new_col] = 0;
-                distance_map[new_row][new_col] = distance_map[current.first][current.second] + 1;
-                parent[new_row][new_col] = current;
             }
         }
     }
-
-    cout << "NO\n";
+    return 1;
 }
+
 
 int main()
 {
     int n,m;
     cin >> n >> m;
     vector<vector<int>> grid(n, vector<int>(m, 0));
-    vector<vector<int>> distance_map(n, vector<int>(m, 0));
     vector<vector<int>> visited(n, vector<int>(m, 0));
 
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
+            visited[i][j] = 0;
             char a;
             cin >> a;
             if (a == '#')
@@ -80,6 +51,24 @@ int main()
                 grid[i][j] = 1;
         }
     }
-    bfs(grid, distance_map, visited,n,m);
-    return 0;
+
+    pair<int,int> start;
+    int count=0;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            // cout<<i<<" "<<j<<" here 1"<<endl;
+            if(grid[i][j]==1 && visited[i][j]==0)
+            {
+                // cout<<i<<" "<<j<<endl;
+                start={i,j};
+                count+=bfs(grid,visited,n,m,start);
+            }
+        }
+    }
+    cout << count << endl;
+    return 0; 
 }
+    
+
