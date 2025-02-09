@@ -1,0 +1,46 @@
+CTF Challenge Write-up: Trivial Flag Transfer Protocol
+1. Challenge Information
+Challenge Name: Trivial Flag Transfer Protocol
+Category: Forensics
+Difficulty: Medium
+Challenge Description: Analyze the given network capture file (tftp.pcapng) to uncover the hidden flag.
+2. Initial Analysis
+Provided File: tftp.pcapng
+Tool Used: Wireshark
+First Thoughts: Since the challenge involves TFTP, which does not encrypt traffic, the files being transferred would likely contain hints or a flag.
+3. Exploitation Approach
+Step 1: Exporting TFTP Files
+Opened the tftp.pcapng file in Wireshark.
+Navigated to File → Export Objects → TFTP.
+Exported all TFTP-transferred files:
+instructions.txt
+plan
+program.deb
+picture1.bmp
+picture2.bmp
+picture3.bmp
+Step 2: Analyzing Text Files
+Opened instructions.txt and plan.
+Both files appeared to be encoded in ROT13.
+Decoded using an online ROT13 decoder:
+TFTP DOESN’T ENCRYPT OUR TRAFFIC SO WE MUST DISGUISE OUR FLAG TRANSFER. FIGURE OUT A WAY TO HIDE THE FLAG AND I WILL CHECK BACK FOR THE PLAN.
+I USED THE PROGRAM AND HID IT WITH -DUEDILIGENCE. CHECK OUT THE PHOTOS.
+Step 3: Investigating the Files
+The mention of photos and the program hinted at steganography.
+The tool used was likely steghide based on the encoded instructions.
+Step 4: Using Steghide on the Images
+Ran steghide on all three BMP images with the passphrase -DUEDILIGENCE.
+steghide extract -sf picture1.bmp -p DUEDILIGENCE
+steghide extract -sf picture2.bmp -p DUEDILIGENCE
+steghide extract -sf picture3.bmp -p DUEDILIGENCE
+picture3.bmp yielded flag.txt, which contained the flag.
+4. Getting the Flag
+Extracted Flag: 
+
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
+
+
+5. Lessons Learned & Takeaways
+Key Takeaways:
+TFTP does not encrypt traffic, so files transferred can be easily extracted with Wireshark.
+Using tools like steghide for BMP image files is a common technique for hiding data in CTF challenges.
