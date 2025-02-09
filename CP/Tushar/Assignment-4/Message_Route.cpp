@@ -34,7 +34,6 @@ void solve() {
             }
         }
     }
-    // }
     if(distance[n]==-1){
         cout<<"IMPOSSIBLE\n";
         return;
