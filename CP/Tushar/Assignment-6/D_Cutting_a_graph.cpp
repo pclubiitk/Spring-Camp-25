@@ -5,70 +5,59 @@ typedef long long int ll;
 #define vi vector<ll>;
 #define pr pair<ll,ll>;
 #define vii vector<pair<ll,ll>;
-ll n=1;
-vector<ll> parent(n+1,0);
-ll get(int node){
-    if(parent[node]==node){return node;}
-    return get(parent[node]);
+// ll n=1;
+vector<ll> parent(1,0);
+ll getparent(int a){
+    if(parent[a]==a){return a;}
+    return parent[a]=getparent(parent[a]);
 }
-vector<ll> size(n+1,1);
-void unite(){
-    int a,b;
-    cin>>a>>b;
-    ll z=get(a);
-    ll t=get(b);
-    if(t==z){return;}
-    parent[b]=a;
-    return;
+void unite(int a,int b){
+    a=getparent(a);
+    b=getparent(b);
+    if(a!=b){
+        parent[a]=b;
+    }
 }
+vector<vector<ll>> adj(1);
 void solve(){
-    int m,q;
-    cin>>n>>m>>q;
-    parent.resize(n+1,0);
-    size.resize(n+1,1);
-    for(int i=1;i<=n;i++){
+    ll n,m,k;
+    cin>>n>>m>>k;
+    adj.resize(n+1);
+    parent.resize(n+1);
+    for(int i=0;i<n+1;i++){
         parent[i]=i;
     }
     for(int i=0;i<m;i++){
-        for(auto j:parent){
-            cout<<j<<" ";
-        }
-        cout<<" ll\n";
-        unite();
+        int a,b;
+        cin>>a>>b;
     }
-    for(auto j:parent){
-        cout<<j<<" ";
-    }
-    cout<<" ll\n";
-    for(int i=0;i<q;i++){
+    vector<tuple<char,ll,ll>> v(k);
+    for(int i=k-1;i>=0;i--){
         string s;
         cin>>s;
-        if(s[0]=='a'){
-            int x,y;
-            cin>>x>>y;
-            if(get(x)==get(y)){
-                cout<<"YES\n";
+        int x,y;
+        cin>>x>>y;
+        v[i]=make_tuple(s[0],x,y);
+    }
+    vector<string> ans;
+    for(int i=0;i<k;i++){
+        char c;
+        ll a,b;
+        tie(c,a,b)=v[i];
+        if(c=='a'){
+            if(getparent(a)==getparent(b)){
+                ans.push_back("YES");
             }
             else{
-                cout<<"NO\n";
+                ans.push_back("NO");
             }
         }
         else{
-            int x,y;
-            cin>>x>>y;
-            if(parent[x]==y){
-                parent[x]=x;
-                size[y]-=size[x];
-            }
-            else if(parent[y]==x){
-                parent[y]=y;
-                size[x]-=size[y];
-            }
+            unite(a,b);
         }
-        for(auto j:parent){
-            cout<<j<<" ";
-        }
-        cout<<" ll\n";
+    }
+    for(int i=ans.size()-1;i>=0;i--){
+        cout<<ans[i]<<"\n";
     }
 }
 int main(){
