@@ -1,0 +1,11 @@
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919} q2
+exporting files as tftp got images and text files,text file had password and then used steghide on the images 1 by 1.
+
+picoCTF{dns_3xf1l_ftw_deadbeef}-shark2.pcapng
+used dns filter and got text startings which if joined could be base 64 decoding them got the flag
+
+picoCTF{p4ck37_5h4rk_ceccaa7f}-Packets Primer
+simply follow the tcp stream
+
+picoCTF{p33kab00_1_s33_u_deadbeef}-q1.pcapng
+exported as http and got text file which was Caesar 13 cypher

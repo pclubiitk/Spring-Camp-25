@@ -1,0 +1,46 @@
+CTF Challenge Write-up: Shark2
+1. Challenge Information
+Challenge Name: Shark2
+Category: Forensics
+Difficulty: Medium
+Challenge Description: Given a PCAP file (shark2.pcapng), analyze network traffic and extract the hidden flag.
+2. Initial Analysis
+Provided File: shark2.pcapng
+Tool Used: Wireshark
+First Thoughts: Since this is another PCAP analysis challenge, checking HTTP and DNS traffic seemed like a good starting point.
+3. Exploitation Approach
+Step 1: Exporting HTTP Objects
+Used File → Export Objects → HTTP in Wireshark.
+Found multiple text/html entries named flag.
+However, the hint "Did you really find_the_flag?" suggested these were red herrings.
+A text file / contained:
+The official Red's Shrimp and Herring website is still under construction. Please check back later!
+This further reinforced the idea that the HTTP objects were not the real flag.
+Step 2: Filtering by IP Address
+Observed that all packets originated from 18.217.1.57.
+Applied Wireshark filter:
+ip.addr == 18.217.1.57
+Noticed DNS packets standing out, particularly ones querying reddshrimpandherring.com.
+Step 3: Extracting Suspicious DNS Queries
+Applied another filter:
+dns
+Found a smallest DNS query:
+Standard query 0xdf26 A cGljb0NU.reddshrimpandherring.com
+Several queries of the same length (93 bytes) appeared in sequence.
+Extracted their prefixes (e.g., cGljb0NU).
+Step 4: Decoding the Hidden Message
+Concatenated all extracted prefixes into one long string.
+The presence of == at the end hinted at Base64 encoding.
+Decoded using codechef:
+
+picoCTF{dns_3xf1l_ftw_deadbeef}
+
+4. Getting the Flag
+
+Decoded Flag: picoCTF{dns_3xf1l_ftw_deadbeef}
+
+5. Lessons Learned & Takeaways
+Key Takeaways:
+HTTP objects can contain misleading red herrings, so cross-checking protocols is essential.
+DNS queries can be used for data exfiltration, a technique often seen in real-world cybersecurity threats.
+Base64 encoding is commonly used to hide data in CTF challenges.
