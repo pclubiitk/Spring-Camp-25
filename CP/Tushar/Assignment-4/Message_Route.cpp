@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
@@ -33,7 +34,6 @@ void solve() {
             }
         }
     }
-    // }
     if(distance[n]==-1){
         cout<<"IMPOSSIBLE\n";
         return;
