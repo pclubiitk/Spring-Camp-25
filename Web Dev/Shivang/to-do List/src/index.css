@@ -1,0 +1,27 @@
+body{
+  background-color: black;
+  color:white;
+}
+.tasksContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.Task{
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  font-size: 2rem;
+  transition: 0.2s;
+}
+.Task:hover{
+  transform: scale(1.1);
+  background-color: rgb(0, 80, 154);
+}
+.inp{
+  width: 200px;
+  display: flex;
+  justify-content: end;
+}

@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.navbar {
+    height: auto;
+    background-color: rgb(174, 253, 227);
+    padding: 0.1em;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.footer{
+    height: auto;
+    background-color: rgb(174, 253, 227);
+    padding: 0.1em;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
