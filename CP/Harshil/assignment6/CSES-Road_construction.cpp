@@ -23,7 +23,6 @@ int get_parent(int a,vector<int>& parent)
 // }
 
 void make_connection(int a,int b,vector<int>& parent,vector<int>& size,int& count,int& max_size)
-
 {
     int parent_a=get_parent(a,parent);
     int parent_b=get_parent(b,parent);
