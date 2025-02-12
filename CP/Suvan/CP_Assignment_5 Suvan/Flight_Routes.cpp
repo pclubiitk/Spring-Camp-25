@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef vector<int> vi;
-typedef pair<int,int> pii;
+typedef vector<long long> vi;
+typedef pair<long long,long long> pii;
 typedef set<int> s;
 #define sz(a) int((a).size())
 #define pb push_back
@@ -12,7 +12,7 @@ vector<vector<pii> > adj;
 
 void path(int n, int m, int k) {
 
-    priority_queue<pii, vector<pii>, greater<pii> > pq;
+    priority_queue<pii, vector<pii>, less<pii> > pq;
     vector<vector<long long> > dist(n + 1);  
 
     pq.push(make_pair(0, 1));  
@@ -40,9 +40,10 @@ void path(int n, int m, int k) {
     }
 
     sort(dist[n].begin(), dist[n].end());
-    for (int i = 0; i < k; i++) {
+    for (int i = 0; i < min(k, (int)dist[n].size()); i++) {
         cout << dist[n][i] << " ";
     }
+
     cout << endl;
 }
 

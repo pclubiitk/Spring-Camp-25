@@ -35,11 +35,7 @@ void Union(int a, int b){
         s[a] += s[b];
     }
 }
-void cut(int a, int b){
-    a = find(a);
-    b = find(b);
-    p_parent[a];
-}
+
 int main() {
     fast_io();
 
@@ -63,13 +59,8 @@ int main() {
             string s;
             int a, b;
             cin>>s>>a>>b;
-            if(s[0]=='a'){
-                if(find(a)==find(b)) cout<<"YES"<<endl;
-                else cout<<"NO"<<endl;
-            }
-            else{
-
-            }
+            
+            
         }
     }
 
