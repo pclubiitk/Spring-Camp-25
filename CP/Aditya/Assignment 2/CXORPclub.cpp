@@ -16,20 +16,25 @@ typedef vector<string> vs;
 ll cxorp(const string& s) {
     unordered_map<ll, ll> flags;
     flags[0] = 1; 
+    
     ll x = 0;
-    ll count = 0;    
+    ll count = 0;
+    
     for (char c : s) {
         x ^= c; 
         count += flags[x];
         flags[x]++;
-    }    
+    }
+    
     return count;
 }
  
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);    
-    cint(t);    
+    cin.tie(nullptr);
+    
+    cint(t);
+    
     w(t) {
         string s;
         cin >> s;
