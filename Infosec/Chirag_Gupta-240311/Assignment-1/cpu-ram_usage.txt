@@ -1,0 +1,5 @@
+CPU Usage:
+Usage: 2.4%
+
+RAM Usage:
+Used: 1.5Gi / Total: 5.8Gi
