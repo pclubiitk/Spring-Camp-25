@@ -1,0 +1,116 @@
+SYSTEM STATS REPORT - Thursday 13 February 2025 02:22:13 PM IST
+
+------------------------------
+CPU USAGE:
+cpu  9686 16 4649 242624 461 0 289 0 0 0
+cpu0 1126 0 598 30485 59 0 110 0 0 0
+cpu1 1254 1 495 30524 62 0 139 0 0 0
+cpu2 1287 0 632 29163 53 0 10 0 0 0
+cpu3 1346 3 478 30455 61 0 5 0 0 0
+cpu4 1359 0 654 30230 72 0 2 0 0 0
+cpu5 1234 8 730 30342 46 0 2 0 0 0
+cpu6 1106 0 620 30519 64 0 2 0 0 0
+cpu7 971 1 440 30903 41 0 16 0 0 0
+
+
+------------------------------
+MEMORY USAGE:
+               total        used        free      shared  buff/cache   available
+Mem:            13Gi       2.0Gi        11Gi        72Mi       895Mi        11Gi
+Swap:          3.5Gi          0B       3.5Gi
+
+
+------------------------------
+DISK SPACE USAGE:
+Filesystem      Size  Used Avail Use% Mounted on
+udev            6.8G     0  6.8G   0% /dev
+tmpfs           1.4G  1.5M  1.4G   1% /run
+/dev/nvme0n1p5   64G   15G   46G  25% /
+tmpfs           6.8G  4.0K  6.8G   1% /dev/shm
+efivarfs        148K  101K   43K  71% /sys/firmware/efi/efivars
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           6.8G  276K  6.8G   1% /tmp
+/dev/nvme0n1p1   96M   54M   43M  56% /boot/efi
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           1.4G  124K  1.4G   1% /run/user/1000
+
+
+------------------------------
+CURRENT DIRECTORY SIZE USAGE:
+136K	Desktop
+4.0K	Documents
+720M	Downloads
+4.0K	Music
+736K	Pictures
+4.0K	Public
+14M	puppy-love
+4.0K	systemusage.txt
+4.0K	Templates
+4.0K	Videos
+
+
+------------------------------
+TOP 10 PROCESSES BY MEMORY USAGE:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+subway      2025 11.3  3.0 11696324 432636 ?     Sl   14:18   0:28 /usr/lib/firefox-esr/firefox-esr
+subway      2305 11.1  2.7 11298900 397416 ?     Rl   14:18   0:27 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 3 -isForBrowser -prefsLen 31141 -prefMapSize 249275 -jsInitLen 234780 -parentBuildID 20241218153108 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {2d9ffb7f-352e-44b5-9075-0fad07b0c9b6} 2025 true tab
+subway      2505  5.0  1.6 2686036 239844 ?      Sl   14:18   0:12 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 7 -isForBrowser -prefsLen 31279 -prefMapSize 249275 -jsInitLen 234780 -parentBuildID 20241218153108 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {37c1c0e1-608a-4c6d-85c7-b66ee8176688} 2025 true tab
+root         831  5.4  1.2 1542336 180124 tty7   Ssl+ 14:16   0:17 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+subway      1164  1.5  0.9 1291568 137100 ?      Sl   14:17   0:04 xfwm4 --display :0.0 --sm-client-id 29339b63a-66bb-4139-bb5b-c4783629d0df
+subway      2179  0.5  0.8 2486992 127012 ?      Sl   14:18   0:01 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 1 -isForBrowser -prefsLen 28548 -prefMapSize 249275 -jsInitLen 234780 -parentBuildID 20241218153108 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {df5aa4af-a3d2-4554-b112-a681e75bd7d9} 2025 true tab
+subway      2874  1.4  0.8 1481080 120268 ?      Sl   14:18   0:02 /usr/bin/qterminal
+subway      2703  0.4  0.7 522808 103676 ?       Sl   14:18   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -parentBuildID 20241218153108 -prefsLen 34099 -prefMapSize 249275 -appDir /usr/lib/firefox-esr/browser {c1a94d92-bcee-4e3a-9c09-9f431fcbdbc5} 2025 true rdd
+subway      2234  0.2  0.6 2444112 95200 ?       Sl   14:18   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 2 -isForBrowser -prefsLen 33907 -prefMapSize 249275 -jsInitLen 234780 -parentBuildID 20241218153108 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appDir /usr/lib/firefox-esr/browser {150ac28f-94dd-47d8-8f84-a17533264b34} 2025 true tab
+subway      1224  0.4  0.6 330536 89368 ?        Sl   14:17   0:01 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcpugraph.so 13 16777228 cpugraph CPU Graph Graphical representation of the CPU load
+
+
+------------------------------
+NETWORK INTERFACE STATUS:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX:  bytes packets errors dropped  missed   mcast           
+          6960      88      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+          6960      88      0       0       0       0 
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether 08:97:98:f1:ad:06 brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+             0       0      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+             0       0      0       0       0       0 
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 50:2f:9b:af:eb:9b brd ff:ff:ff:ff:ff:ff
+    RX:  bytes packets errors dropped  missed   mcast           
+      10585318   10196      0       0       0       0 
+    TX:  bytes packets errors dropped carrier collsns           
+       1097731    3745      0       0       0       0 
+
+
+------------------------------
+ACTIVE NETWORK CONNECTIONS:
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 172.23.159.137:46892    31.13.79.53:443         ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:56922    34.107.243.93:443       ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:58618    34.49.51.44:443         TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:53290    142.250.77.206:443      TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:43414    142.250.77.194:443      TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:48826    35.190.72.216:443       TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:40522    31.13.79.53:443         ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:60898    172.64.155.209:443      ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:37162    172.217.167.214:443     TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:48628    142.250.195.4:443       TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:40366    142.250.193.234:443     TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:55634    142.251.175.84:443      TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:43730    142.250.194.3:443       TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:36204    142.250.193.81:443      TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:48414    142.250.192.230:443     TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:43196    172.64.155.209:443      ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:60904    172.64.155.209:443      ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:46878    31.13.79.53:443         ESTABLISHED 2025/firefox-esr    
+tcp        0      0 172.23.159.137:41364    142.250.192.226:443     TIME_WAIT   -                   
+tcp        0      0 172.23.159.137:48246    23.10.239.251:80        ESTABLISHED 2025/firefox-esr    
+udp        0      0 172.23.159.137:68       192.0.2.1:67            ESTABLISHED -                   
+
+
