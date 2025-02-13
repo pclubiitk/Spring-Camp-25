@@ -16,7 +16,7 @@ int main() {
     int n, x;
     cin >> n >> x;
     vi a(n);
-    unordered_map<int, vi> index; 
+    unordered_map<int, vector<int>> index; 
  
     rep(i, 0, n) {
         cin >> a[i];
