@@ -1,5 +1,5 @@
 
-# SPING CAMP WEB3 ASSIGNMENT1
+# SPRING CAMP WEB3 ASSIGNMENT1
 
 This program finds two distinct strings, S1 and S2, that start with given prefixes P1 and P2, respectively, and have SHA-256 hashes sharing the same first k hexadecimal characters.
 
