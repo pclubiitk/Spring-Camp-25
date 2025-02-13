@@ -1,0 +1,27 @@
+CTF Challenge Write-up: Packets Primer
+1. Challenge Information
+CTF Name: picoCTF
+Challenge Name: Packets Primer
+Category: Forensics
+Difficulty: Easy
+Challenge Description: Analyze the given network capture file (network-damp.flag.pcap) to find the hidden flag.
+2. Initial Analysis
+Provided File: network-damp.flag.pcap
+Tool Used: Wireshark
+First Thoughts: Since the challenge name suggests a basic introduction to network packets, the flag might be easily found by skimming through the captured packets.
+3. Exploitation Approach
+Step 1: Opening the PCAP File in Wireshark
+Loaded network-damp.flag.pcap in Wireshark.
+Observed that the capture contained only 9 data packets.
+Step 2: Skimming Through the Packets
+Since there were very few packets, manually inspected each one.
+Found the flag in the 4th packet, which was a PSH ACK packet.
+(Not sure if the PSH ACK flag was relevant, but this packet contained the flag in its payload.)
+4. Getting the Flag
+
+Extracted Flag: picoCTF{p4ck37_5h4rk_01b0a06}
+
+5. Lessons Learned & Takeaways
+Key Takeaways:
+In small PCAP files, manually inspecting packets can be an effective strategy.
+The PSH ACK packet might indicate data transmission, but in this case, it was just where the flag was located.

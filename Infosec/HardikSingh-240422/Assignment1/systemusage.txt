@@ -1,0 +1,60 @@
+SYSTEM STATS:
+
+
+CPU USAGE:
+cpu  1596 0 2355 5956005 1578 0 291 0 0 0
+cpu0 134 0 229 330685 99 0 155 0 0 0
+cpu1 85 0 262 330639 81 0 66 0 0 0
+cpu2 190 0 211 330339 342 0 15 0 0 0
+cpu3 39 0 52 330898 222 0 17 0 0 0
+cpu4 185 0 457 330372 93 0 13 0 0 0
+cpu5 27 0 18 331195 4 0 10 0 0 0
+cpu6 80 0 122 330914 82 0 0 0 0 0
+cpu7 25 0 39 331188 3 0 0 0 0 0
+cpu8 78 0 133 330891 19 0 0 0 0 0
+cpu9 65 0 68 330633 280 0 1 0 0 0
+cpu10 145 0 152 330922 34 0 0 0 0 0
+cpu11 37 0 23 331166 18 0 12 0 0 0
+cpu12 173 0 213 330814 82 0 1 0 0 0
+cpu13 11 0 18 331207 4 0 1 0 0 0
+cpu14 80 0 127 331024 21 0 0 0 0 0
+cpu15 7 0 24 331204 13 0 0 0 0 0
+cpu16 230 0 185 330707 150 0 0 0 0 0
+cpu17 5 0 23 331198 21 0 0 0 0 0
+
+
+
+RAM USAGE:
+
+               total        used        free      shared  buff/cache   available
+Mem:           7.5Gi       702Mi       6.8Gi       3.0Mi       274Mi       6.8Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+
+
+DISK SPACE USAGE:
+
+Filesystem      Size  Used Avail Use% Mounted on
+none            3.8G     0  3.8G   0% /usr/lib/modules/5.15.167.4-microsoft-standard-WSL2
+none            3.8G  4.0K  3.8G   1% /mnt/wsl
+drivers         476G  252G  224G  53% /usr/lib/wsl/drivers
+/dev/sdc       1007G  3.9G  952G   1% /
+none            3.8G   76K  3.8G   1% /mnt/wslg
+none            3.8G     0  3.8G   0% /usr/lib/wsl/lib
+rootfs          3.8G  2.2M  3.8G   1% /init
+none            3.8G  552K  3.8G   1% /run
+none            3.8G     0  3.8G   0% /run/lock
+none            3.8G     0  3.8G   0% /run/shm
+tmpfs           4.0M     0  4.0M   0% /sys/fs/cgroup
+none            3.8G   76K  3.8G   1% /mnt/wslg/versions.txt
+none            3.8G   76K  3.8G   1% /mnt/wslg/doc
+C:\             476G  252G  224G  53% /mnt/c
+tmpfs           770M   16K  770M   1% /run/user/1000
+
+
+
+CURRENT DIRECTORY SIZE USAGE:
+
+0	README.md
+4.0K	scriptforshowingsystemusage.sh
+4.0K	systemusage.txt
