@@ -1,4 +1,4 @@
-#Trivial Flag Transfer Protocol
+# Trivial Flag Transfer Protocol
 Opened the network packet file in Wireshark  
 Then did Analyse>Follow>UDP stream  
 Saw some data return in some of the streams  
