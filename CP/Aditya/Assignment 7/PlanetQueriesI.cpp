@@ -1,7 +1,10 @@
 #include <bits/stdc++.h>
-using namespace std;
- 
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
+using namespace std; 
 #define rep(i, a, b) for (int i = a; i < b; ++i)
+#define endl "\n"
 #define tr(a, x) for (auto& a : x)
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x).size()
@@ -44,5 +47,3 @@ int main() {
         cout << ++ans << "\n";
     }    
 }
-
-//TLE
