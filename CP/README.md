@@ -2,15 +2,15 @@
 
 Assignment Problems can be found here : https://docs.google.com/document/d/1wYteLX1j9gSUPh5o-hA7-mDRbvxyTwlPzlakuAwgZpg/edit?usp=sharing 
 
-- Abubakar Siddique    [======] (6/6)
-- Aditya Sai Vemparala [====__] (4/6)
-- Harshil Goel         [====__] (4/6)
-- Jagrav Garg          [===___] (3/6)
-- Jithin J Joshi       [==____] (2/6)
-- Piyush Verma         [=_____] (1/6)
-- Poorvansh Tiwari     [______] (0/6)
-- Suvan Arora          [=====_] (5/6)
-- Tushar Bagani        [====__] (4/6)
-- Vishu Khare          [==____] (2/6)
+- Abubakar Siddique    [========] (8/8)
+- Aditya Sai Vemparala [=====___] (5/8)
+- Harshil Goel         [=====___] (5/8)
+- Jagrav Garg          [====____] (4/8)
+- Jithin J Joshi       [====____] (4/8)
+- Piyush Verma         [=_______] (1/8)
+- Poorvansh Tiwari     [________] (0/8)
+- Suvan Arora          [=======_] (7/8)
+- Tushar Bagani        [======__] (6/8)
+- Vishu Khare          [===_____] (3/8)
 
-- [x] if done more than about half of the assignment.
+- [x] if done more than about half of each section of the assignments.
