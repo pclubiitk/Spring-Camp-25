@@ -1,0 +1,6 @@
+ran the program beleaf
+found that it was an input checker
+decompiled
+the main program used a function sub_7FA (named by IDA not me, lol) to perform the check(images attached)
+used a bit of R1 magic to decode the flag 
+voila

@@ -1,0 +1,9 @@
+analysed the pwn1 file; was a elf binary
+ran it
+was an I/O type CTF file
+used IDA to decompile; found the correct answers to first two questions
+noticed that the last input was being compare to the hex value 0DEA110C8h or 0xdea110c8
+the last input had to be more than 0x2b long, as the string was being stored at -0x3b and the variable that is being compared is at -0x10
+thus the payload was designed as the flag was obtained
+flag{g0ttem_b0yz}
+voila

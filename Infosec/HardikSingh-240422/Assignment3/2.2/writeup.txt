@@ -1,0 +1,7 @@
+analysed the file; elf file
+ran it but it was asking for password
+decompiled using ida and found some insights:
+	input 's' and variable being compared to the password (v6 in ida) were located 0x14 (or 20 in decimal) apart
+	noted that the flag was stored at address 0804A080; thus we can rewrite the hex to display the flag at this location by modifying the address in v6
+did this and found the flag
+voila

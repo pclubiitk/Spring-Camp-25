@@ -1,0 +1,4 @@
+used strings to analyze the file
+got a shit ton of info
+used grep to filter picoCTF: 'strings strings | grep picoCTF > flag.txt'
+voila
