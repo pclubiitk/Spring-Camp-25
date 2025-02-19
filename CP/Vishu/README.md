@@ -6,4 +6,4 @@ Vishu Khare :
 - [x] Assignment 5 (session 6)
 - [x] Assignment 6 (session 7)
 - [ ] Assignment 7 (session 9)
-- [ ] Assignment 8 (session 10)
+- [x] Assignment 8 (session 10)
