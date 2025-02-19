@@ -1,0 +1,10 @@
+scanned with strings
+found some things that suggested an input was being evaluated
+ran the program
+program actually was checking for input
+used IDA Pro to disassemble the code in rev
+found the main function
+it was essentially validating the input using validate function
+went to the validate function to find that it was comparing against a bunch of numbers; by their values they looked to be ascii
+decoded them to get flag{HuCf_lAb}
+voila

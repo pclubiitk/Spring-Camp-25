@@ -1,0 +1,12 @@
+[x] Starting local process './pwn1'
+[+] Starting local process './pwn1': pid 1012
+[*] Switching to interactive mode
+Stop! Who would cross the Bridge of Death must answer me these questions three, ere the other side he see.
+What... is your name?
+What... is your quest?
+What... is my secret?
+Right. Off you go.
+flag{g0ttem_b0yz}
+[*] Got EOF while reading in interactive
+$
+[*] Got EOF while sending in interactive
