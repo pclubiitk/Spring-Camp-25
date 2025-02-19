@@ -11,6 +11,6 @@ Assignment Problems can be found here : https://docs.google.com/document/d/1wYte
 - Poorvansh Tiwari     [________] (0/8)
 - Suvan Arora          [=======_] (7/8)
 - Tushar Bagani        [======__] (6/8)
-- Vishu Khare          [===_____] (3/8)
+- Vishu Khare          [====____] (4/8)
 
 - [x] if done more than about half of each section of the assignments.
