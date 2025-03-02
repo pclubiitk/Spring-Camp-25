@@ -5,14 +5,14 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x).size()
 #define w(a) while(a--)
-#define cint(n) int n; cin >> n;
-#define endl '\n';
+#define cint(n) int n; cin >> n
+#define endl '\n'
 typedef long long ll;
 typedef long double ld;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
 typedef vector<string> vs;
-#define MOD 1e9 + 7;
+#define MOD 1e9 + 7
  
 int main() {
     ios::sync_with_stdio(0);

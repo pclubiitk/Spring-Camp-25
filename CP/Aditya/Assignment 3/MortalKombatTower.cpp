@@ -1,46 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-#define rep(i, a, b) for (int i = a; i < b; ++i)
-#define tr(a, x) for (auto& a : x)
+#define rep(i, a, b) for(int i = a; i < b; ++i)
+#define tr(a, x) for(auto& a : x)
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x).size()
-#define w(a) while (a--)
-#define cint(n) int n; cin >> n;
+#define w(a) while(a--)
+#define cint(n) int n; cin >> n
+#define endl '\n'
+#define fastio ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 typedef long long ll;
 typedef long double ld;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
 typedef vector<string> vs;
-#define INF 1e9
+#define MOD 1e9 + 7
 
-void solve() {
-    cint(n);
-    vi a(n);
-    rep(i, 0, n) {
-        cin >> a[i];
+const int MAXN = 200005;
+int dp[MAXN][2];
+vi a;
+
+int solve(int i, int player) {
+    if (i >= sz(a)) return 0;
+    if (dp[i][player] != -1) return dp[i][player];
+    
+    int res;
+    if (player == 0) {
+        res = min(solve(i + 1, 1), solve(i + 2, 1));
+    } else {
+        res = min(a[i] + solve(i + 1, 0), (i + 1 < sz(a) ? a[i] + a[i + 1] : a[i]) + solve(i + 2, 0));
     }
-    vector<vi> dp(n+1, vi(2, INF));
-    dp[0][0] = 0;
-    rep(i, 0, n) {
-        rep(j, 0, 2) {
-            int add = (j == 0) ? a[i] : 0;
-            if (i+1 <= n) {
-                dp[i+1][1-j] = min(dp[i+1][1-j], dp[i][j] + add);
-            }
-            if (i+2 <= n) {
-                dp[i+2][1-j] = min(dp[i+2][1-j], dp[i][j] + add + (i + 1 < n ? a[i+1] : 0));
-            }
-        }
-    }
-    cout << min(dp[n][0], dp[n][1]) << endl;
+    
+    return dp[i][player] = res;
 }
 
 int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
-    cint(t);
-    w(t) {
-        solve();
+    fastio;
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        a.resize(n);
+        tr(x, a) cin >> x;
+        
+        memset(dp, -1, sizeof(dp));
+        cout << solve(0, 0) << endl;
     }
+    return 0;
 }

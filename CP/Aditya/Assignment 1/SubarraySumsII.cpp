@@ -1,3 +1,6 @@
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i, a, b) for(int i = a; i < b; ++i)
@@ -5,33 +8,31 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x).size()
 #define w(a) while(a--)
-#define cint(n) int n; cin >> n;
+#define cint(n) int n; cin >> n
+#define endl '\n'
 typedef long long ll;
 typedef long double ld;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
 typedef vector<string> vs;
- 
+#define MOD 1e9 + 7
+
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);    
-    int n;
-    ll x;
-    cin >> n >> x;
-    vector<ll> a(n), prefix(n + 1, 0);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-        prefix[i + 1] = prefix[i] + a[i]; 
-    }
-    sort(prefix.begin(), prefix.end()); 
-    ll count = 0;
-    for (int i = 0; i <= n; i++) {
-        ll target = prefix[i] - x;
-        auto lower = lower_bound(prefix.begin(), prefix.begin() + i, target);
-        auto upper = upper_bound(prefix.begin(), prefix.begin() + i, target);
-        count += (upper - lower); 
-    }
-    cout << count << "\n";
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n, x;
+    cin >> n >> x;    
+    vector<ll> prefix(n + 1, 0);
+    rep(i, 1, n+1) {
+        cint(a);
+        prefix[i] = prefix[i-1] + a;
+    }    
+    map<ll, int> sums;
+    ll result = 0;    
+    rep(i, 0, n+1) {
+        result += sums[prefix[i] - x];
+        sums[prefix[i]]++;
+    }    
+    cout << result << endl;
     return 0;
 }
-//messed up with negative numbers
