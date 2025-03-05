@@ -1,0 +1,21 @@
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
+
+
+Files were exported using TFTP, consisting of images and text files. The text file contained a password, and each image was processed individually with steghide to conceal data.
+
+
+
+picoCTF{dns_3xf1l_ftw_deadbeef}
+
+A DNS filter was applied to capture text fragments, which, when concatenated, formed a Base64-encoded string. Decoding the string successfully revealed the flag.
+
+
+
+picoCTF{p4ck37_5h4rk_ceccaa7f}
+
+found in tcp streams
+
+
+picoCTF{p33kab00_1_s33_u_deadbeef}
+
+Files were transferred via HTTP, and a text file was retrieved. The contents were encrypted using a Caesar cipher with a shift of 13 (ROT13), which needed to be decoded.
