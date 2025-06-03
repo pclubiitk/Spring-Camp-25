@@ -1,6 +1,8 @@
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
 #include <bits/stdc++.h>
 using namespace std;
-
 #define rep(i, a, b) for (int i = a; i < b; ++i)
 #define tr(a, x) for (auto& a : x)
 #define all(x) x.begin(), x.end()
@@ -15,44 +17,35 @@ typedef vector<string> vs;
 #define INF 1e9
 #define MOD 1000000007
 const int MAX = 200001;
-
-vi adj[MAX], deg(MAX);
+vi adj[MAX];
+vector<bool> vis(MAX, false);
+int dp[MAX][2];
+void dfs(int node, int parent) {
+    dp[node][0] = 0;
+    dp[node][1] = 0;    
+    for (int child : adj[node]) {
+        if (child != parent) {
+            dfs(child, node);
+            dp[node][0] += max(dp[child][0], dp[child][1]);
+        }
+    }    
+    for (int child : adj[node]) {
+        if (child != parent) {
+            dp[node][1] = max(dp[node][1], dp[child][0] + 1 + dp[node][0] - max(dp[child][0], dp[child][1]));
+        }
+    }
+}
 int main() {
     ios::sync_with_stdio(0);
-    cin.tie(0); cout.tie(0);
+    cin.tie(0); cout.tie(0);    
     cint(n);
-    queue<int> q;
     rep(i, 0, n-1) {
         int a, b;
         cin >> a >> b;
         adj[a].push_back(b);
         adj[b].push_back(a);
-        deg[a]++; deg[b]++;
-    }
-    rep(i, 1, n+1) {
-        if (deg[i] == 1) q.push(i);
-    }
-    int ans = 0;
-    vector<bool> vis(n+1, false);
-    while(!q.empty()) {
-        int leaf = q.front();
-        q.pop();
-        if (vis[leaf]) continue;
-        for (int parent : adj[leaf]) {
-            if (!vis[parent]) {
-                vis[parent] = true;
-                vis[leaf] = true;
-                ans++;
-                deg[parent]--;
-            }
-            for (int neighbor : adj[parent]) {
-                deg[neighbor]--;
-                if (deg[neighbor] == 1) q.push(neighbor);
-            }
-            break;
-        }
-    }
-    cout << ans << endl;
+    }    
+    dfs(1, 0);
+    cout << max(dp[1][0], dp[1][1]) << endl;    
+    return 0;
 }
-
-//WA
