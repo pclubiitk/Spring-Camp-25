@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100%;
+}
+#root{
+    min-height: 100%;
+}
+
+
+pre{
+    padding-top:1rem ;
+    padding-left:0.5rem ;
+    padding-right:0.5rem ;
+    background-color: black;
+}
+ .errorBoxDark{
+    width:80%;
+    background-color: #ffefef;
+    color:#e7195a;
+    border:  1px solid #e7195a;
+    box-shadow: #e7195a 0px 0px 1rem ;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: absolute;
+    z-index: 2;
+    animation: appearDisappear 4s ease-in-out 0s 1 forwards ;
+    top: 1rem;
+}
+.errorBoxLight{
+    width: 80%;
+    background-color: #ffe6d6;
+    background-color: papayawhip;
+    color:#e76519;
+    border:  1px solid #e76519;
+    box-shadow: #fe5d00 0px 0px 1rem ;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: absolute;
+    z-index: 2;
+    animation: appearDisappear 4s ease-in-out 0s 1 forwards ;
+    top: 1rem;
+}
+
+.errorBoxDarkStatic{
+    width:80%;
+    background-color: #ffefef;
+    color:#e7195a;
+    border:  1px solid #e7195a;
+    box-shadow: #e7195a 0px 0px 1rem ;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+}
+.errorBoxLightStatic{
+    width: 80%;
+    background-color: #ffe6d6;
+    background-color: papayawhip;
+    color:#e76519;
+    border:  1px solid #e76519;
+    box-shadow: #fe5d00 0px 0px 1rem ;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+}
+
+
+textarea:focus{
+    outline: none;
+    border: none;
+}
+@keyframes appearDisappear{
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    10% {
+      opacity: 1;
+      visibility: visible;
+    }
+    90% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+/*
+.darkHistoryBox{
+    display: "flex";
+    flex-direction: column;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #ff008d;
+    border: 2px solid #ff008d;
+}
+
+.lightHistoryBox{
+    display: "flex";
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px  #ff6c00;
+    border: 2px solid  #ff6c00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lightForm{
+    display:flex;
+    flex-direction:column;
+    row-gap:1rem;
+    padding:2rem;
+    border-radius:2rem;
+    box-shadow:0 0 1rem black;
+    width:80%;
+    align-items:center;
+    margin-bottom:1rem;
+}
+.darkForm{
+    background-color: black;
+    color: white;
+    display:flex;
+    flex-direction:column;
+    row-gap:1rem;
+    padding:2rem;
+    border-radius:2rem;
+    box-shadow:0 0 1rem white;
+    width:80%;
+    align-items:center;
+    margin-bottom:1rem;
+}
+ */
